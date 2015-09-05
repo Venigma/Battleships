@@ -170,21 +170,19 @@ print """
              3 ~ ~ ~ ~ ~
              4 ~ ~ ~ ~ ~\n"""
 
-print_player_board(player_board)
-
-
 print "You have 4 Ships, choose where to put them"
+
 
 # Ship 1
 chose1right = "False"
 while chose1right:
     playership1row = int(raw_input("Ship 1 row: "))
     playership1col = int(raw_input("Ship 1 Column: "))
-    player_board[playership1row][playership1col] = "V"
     if playership1row not in range(5) or playership1col not in range(5):
         chose1right = "False"
         print "Hmm, they dont seem to be correct coordinates. Try that ship again"
     else:
+        player_board[playership1row][playership1col] = "V"
         chose1right = "True"
         break
 # Ship 2
@@ -192,23 +190,83 @@ chose2right = "False"
 while chose2right:
     playership2row = int(raw_input("Ship 2 row: "))
     playership2col = int(raw_input("Ship 2 Column: "))
-    player_board[playership2row][playership2col] = "V"
+#    player_board[playership2row][playership2col] = "V"
     if playership2row not in range(5) or playership2col not in range(5):
-            chose2right = "False"
-            print "Hmm, they dont seem to be correct coordinates. Try that ship again"
-        else:
-            chose2right = "True"
-            break
+        chose2right = "False"
+        print "Hmm, they dont seem to be correct coordinates. Try that ship again"
+    else:
+        player_board[playership2row][playership2col] = "V"
+        chose2right = "True"
+        break
 # Ship 3
-playership3row = int(raw_input("Ship 3 row: "))
-playership3col = int(raw_input("Ship 3 Column: "))
-player_board[playership3row][playership3col] = "V"
+chose3right = "False"
+while chose3right:
+    playership3row = int(raw_input("Ship 3 row: "))
+    playership3col = int(raw_input("Ship 3 Column: "))
+#    player_board[playership3row][playership3col] = "V"
+    if playership3row not in range(5) or playership3col not in range(5):
+        chose3right = "False"
+        print "Hmm, they dont seem to be correct coordinates. Try that ship again"
+    else:
+        player_board[playership3row][playership3col] = "V"
+        chose3right = "True"
+        break
 # Ship 4
-playership4row = int(raw_input("Ship 4 row: "))
-playership4col = int(raw_input("Ship 4 Column: "))
-player_board[playership4row][playership4col] = "V"
+chose4right = "False"
+while chose4right:
+    playership4row = int(raw_input("Ship 4 row: "))
+    playership4col = int(raw_input("Ship 4 Column: "))
+#    player_board[playership4row][playership4col] = "V"
+    if playership4row not in range(5) or playership4col not in range(5):
+        chose4right = "False"
+        print "Hmm, they dont seem to be correct coordinates. Try that ship again"
+    elif player_board[playership4row][playership4col] == "V":
+        print "Theres a ship there already, put it somewhere else"
+    else:
+        player_board[playership4row][playership4col] = "V"
+        chose4right = "True"
+        break
 
-# if playership1row not in range(5) or playership1col not in range(5) or playership2row not in range(5) or playership2col not in range(5)or or or :
+
+# Use when learnt about classes
+# # Ship 1
+# playership1row = "x"
+# playership1col = "x"
+# # Ship 2
+# playership2row = ""
+# playership2col = ""
+# # Ship 3
+# playership3row = ""
+# playership3col = ""
+# # Ship 4
+# playership4row = ""
+# playership4col = ""
+
+# choseright = ""
+
+
+# def choose_ship(intg, shiprow, shipcol):
+#     choseright = "False"
+#     while choseright:
+#         shiprow = int(raw_input("Ship " + intg + " row: "))
+#         shipcol = int(raw_input("Ship " + intg + " Column: "))
+#         if shiprow not in range(5) or shipcol not in range(5):
+#             choseright = "False"
+#             print "Hmm, they dont seem to be correct coordinates. Try that ship again"
+#         elif player_board[shiprow][shipcol] == "V":
+#             print "Theres a ship there already, put it somewhere else"
+#         else:
+#             player_board[shiprow][shipcol] = "V"
+#             choseright = "True"
+#             print "\n\nYour Ships: "
+#             break
+#     return None
+
+# # Ship 1
+# choose_ship("1", playership1row, playership1col)
+
+# print(playership1row)
+# print(playership1col)
 
 print_player_board(player_board)
 
