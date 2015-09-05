@@ -188,9 +188,17 @@ while chose1right:
         chose1right = "True"
         break
 # Ship 2
-playership2row = int(raw_input("Ship 2 row: "))
-playership2col = int(raw_input("Ship 2 Column: "))
-player_board[playership2row][playership2col] = "V"
+chose2right = "False"
+while chose2right:
+    playership2row = int(raw_input("Ship 2 row: "))
+    playership2col = int(raw_input("Ship 2 Column: "))
+    player_board[playership2row][playership2col] = "V"
+    if playership2row not in range(5) or playership2col not in range(5):
+            chose2right = "False"
+            print "Hmm, they dont seem to be correct coordinates. Try that ship again"
+        else:
+            chose2right = "True"
+            break
 # Ship 3
 playership3row = int(raw_input("Ship 3 row: "))
 playership3col = int(raw_input("Ship 3 Column: "))
