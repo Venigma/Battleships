@@ -228,7 +228,7 @@ while chose4right:
         break
 
 
-# Use when learnt about classes
+# ToDo: Use when learnt about classes
 # # Ship 1
 # playership1row = "x"
 # playership1col = "x"
@@ -282,11 +282,21 @@ def random_row(board):
 def random_col(board):
     return randint(0, len(board) - 1)
 
-ship_row = random_col(board)
-ship_col = random_row(board)
 
-print ship_row  # DEBUG OFF
-print ship_col  # DEBUG OFF
+ship_row1 = random_col(board)
+ship_col1 = random_row(board)
+ship_row2 = random_col(board)
+ship_col2 = random_row(board)
+ship_row3 = random_col(board)
+ship_col3 = random_row(board)
+ship_row4 = random_col(board)
+ship_col4 = random_row(board)
+
+# ToDo: Add function and class so CPU ships dont end up in the same place
+
+
+# print ship_row1  # DEBUG OFF
+# print ship_col1  # DEBUG OFF
 
 goworked = "False"
 
@@ -299,7 +309,7 @@ while goworked:
             from 0,0 to 4,4."
             goworked = "False"
 
-    elif guess_row == ship_row and guess_col == ship_col:
+    elif guess_row == ship_row1 and guess_col1 == ship_col: # ToDo: Add other ship coord variables
         print "\nThats a hit, good work, sailor"
         board[guess_row][guess_col] = "X"
         goworked = "True"
@@ -316,3 +326,7 @@ while goworked:
         print print_board(board)
         goworked = "True"
         break
+
+print "\n\nCPUs Turn"
+print "\nYour Ships"
+print_player_board()
