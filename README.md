@@ -6,5 +6,7 @@ Changelog:
 
 ToDo:
 Add Score Board
+
 Add Gui
+
 Add Player v. CPU
